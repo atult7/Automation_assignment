@@ -1,0 +1,59 @@
+import java.util.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+public class Exercisefour {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\seleniumdriver//chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+
+		driver.findElement(By.id("checkBoxOption1")).click();
+		System.out.println(driver.findElement(By.id("checkBoxOption1")).isSelected());
+		driver.findElement(By.id("checkBoxOption1")).click();
+		Thread.sleep(2000);
+		System.out.println(driver.findElement(By.id("checkBoxOption1")).isSelected());
+
+		Thread.sleep(1000);
+		
+
+		
+		driver.findElement(By.id("checkBoxOption2")).click();
+		System.out.println(driver.findElement(By.id("checkBoxOption2")).isSelected());
+		driver.findElement(By.id("checkBoxOption2")).click();
+		Thread.sleep(2000);
+		System.out.println(driver.findElement(By.id("checkBoxOption2")).isSelected());
+
+		Thread.sleep(1000);
+
+		driver.findElement(By.id("checkBoxOption3")).click();
+		System.out.println(driver.findElement(By.id("checkBoxOption3")).isSelected());
+		driver.findElement(By.id("checkBoxOption3")).click();
+		Thread.sleep(2000);
+		System.out.println(driver.findElement(By.id("checkBoxOption3")).isSelected());
+
+		List<WebElement> AllCheckboxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
+		int size = AllCheckboxes.size();
+		System.out.println(size);
+		int i;
+		for (i = 0; i < size; i++) 
+		{
+			AllCheckboxes.get(i).click();
+			System.out.println(AllCheckboxes.get(i).isSelected());
+		}
+
+		Thread.sleep(1000);
+
+		for (i = 0; i < size; i++) {
+			AllCheckboxes.get(i).click();
+			System.out.println(AllCheckboxes.get(i).isSelected());
+		}
+
+	}
+
+}

@@ -1,0 +1,29 @@
+import java.util.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ExerciseOne {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\seleniumdriver//chromedriver.exe");
+		
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("http://www.qaclickacademy.com/practice.php ");
+		//this will by default will give false as option 1 is not seleted
+		System.out.println(driver.findElement(By.id("checkBoxOption1")).isSelected());
+		driver.findElement(By.id("checkBoxOption1")).click();
+		//this will true input as option 1 is selected
+		System.out.println(driver.findElement(By.id("checkBoxOption1")).isSelected());
+		//for selecting option 2 and option 3
+		driver.findElement(By.id("checkBoxOption2")).click();
+		System.out.println(driver.findElement(By.id("checkBoxOption2")).isSelected());
+		//
+		driver.findElement(By.id("checkBoxOption3")).click();
+		System.out.println(driver.findElement(By.id("checkBoxOption3")).isSelected());
+		
+		
+		
+
+	}
+
+}
