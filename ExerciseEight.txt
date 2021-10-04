@@ -1,0 +1,26 @@
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ExerciseEight { 
+
+	public static void exercise8(WebDriver driver) throws InterruptedException 
+	{
+		
+		JavascriptExecutor js =(JavascriptExecutor)driver;//creating javascriptExecutor object to tell selinium to run java code
+		js.executeScript("window.scrollBy(0,600)");//movement of window
+		Thread.sleep(500);
+		//Verify that  row in the table contains content
+		WebElement table=driver.findElement(By.id("product"));
+		List<WebElement> secondrow=table.findElements(By.tagName("tr")).get(0).findElements(By.tagName("th"));
+		System.out.println(secondrow.get(0).getText());
+		System.out.println(secondrow.get(1).getText());
+		System.out.println(secondrow.get(2).getText());
+	}
+}
